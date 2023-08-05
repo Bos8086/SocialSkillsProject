@@ -9,8 +9,11 @@ import NonAutistcHomePage from './screens/NonAutisticHomePage';
 import FormalPage from './screens/FormalPage';
 import InformalPage from './screens/InformalPage';
 import WelcomePage from './screens/WelcomePage';
+import Settings from './screens/Settings';
+
 
 const Stack = createNativeStackNavigator();
+
 
 
  
@@ -25,6 +28,10 @@ export default function App() {
       <Stack.Screen
         name='WelcomePage'
         component={WelcomePage}
+      />
+      <Stack.Screen
+        name='Settings'
+        component={Settings}
       />
       <Stack.Screen
         name="IntroPage"

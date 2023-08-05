@@ -1,10 +1,30 @@
 import { View, Text, TouchableWithoutFeedback, StyleSheet,Image } from "react-native";
+import React , { useEffect } from "react";
+import * as Speech from 'expo-speech';
 
-import React from "react";
 
 const WelcomePage = ({ navigation }) => {
-  const buttonHandler = () => {
+
+  const speakTextContinue = () => {
+      const thingToSay = 'hellooooo';
+      Speech.speak(thingToSay);  
+  };
+
+  const speakTextSettings = () => {
+    const thingToSay = 'Settings';
+    Speech.speak(thingToSay);  
+};
+
+
+
+  const buttonHandlerContinue = () => {
+    speakTextContinue
     navigation.navigate("IntroPage");
+  };
+
+  const buttonHandlerSettings = () => {
+    speakTextSettings
+    navigation.navigate("Settings");
   };
 
   return (
@@ -23,9 +43,16 @@ const WelcomePage = ({ navigation }) => {
      
 
       <View style={styles.buttonContainer}>
-        <TouchableWithoutFeedback onPress={buttonHandler}>
+        <TouchableWithoutFeedback onPress={buttonHandlerContinue}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Click Here to continue </Text>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+      <View style={styles.buttonContainer}>
+        <TouchableWithoutFeedback onPress={buttonHandlerSettings}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Settings</Text>
           </View>
         </TouchableWithoutFeedback>
       </View>
