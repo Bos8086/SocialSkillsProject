@@ -1,7 +1,9 @@
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View ,Pressable} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import ProfilePage from './screens/ProfilePage';
 import IntroPage from './screens/IntroPage';
 import AutisticHomePage from './screens/AutisticHomePage';
@@ -10,10 +12,38 @@ import FormalPage from './screens/FormalPage';
 import InformalPage from './screens/InformalPage';
 import WelcomePage from './screens/WelcomePage';
 import Settings from './screens/Settings';
+import SupportServices from './screens/SupportServices';
+
 
 
 const Stack = createNativeStackNavigator();
 
+const Drawer = createDrawerNavigator();
+
+
+function AutisticSupportDrawerNavigator(){
+  return <Drawer.Navigator>
+    <Drawer.Group>
+     
+      <Drawer.Screen
+        name='AutisticHomePage'
+        component={NonAutistcHomePage}
+      >    
+      </Drawer.Screen>
+      <Drawer.Screen 
+      name='AutisticServices'
+      component={SupportServices}
+      >
+      </Drawer.Screen>
+      <Drawer.Screen
+        name='HomePage'
+        component={IntroPage}
+      >
+
+      </Drawer.Screen>
+    </Drawer.Group>
+  </Drawer.Navigator>
+}
 
 
  
@@ -45,7 +75,7 @@ export default function App() {
       />
       <Stack.Screen
         name='NonAutisticHomePage'
-        component={NonAutistcHomePage}
+        component={AutisticSupportDrawerNavigator}
         options={{title:" Autistc Support"}}
       />
       <Stack.Screen
