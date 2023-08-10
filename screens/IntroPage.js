@@ -1,4 +1,4 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native'
+import { View, Text, Pressable, StyleSheet,Linking } from 'react-native'
 import React from 'react'
 
 const IntroPage = ({ navigation }) => {
@@ -9,6 +9,10 @@ const IntroPage = ({ navigation }) => {
 
     const onPressNonAutistic = () => {
         navigation.navigate("NonAutisticHomePage")
+    }
+
+    const onPressIdioms = () => {
+        Linking.openURL('https://www.ef.co.uk/english-resources/english-idioms/');
     }
 
   return (
@@ -33,6 +37,13 @@ const IntroPage = ({ navigation }) => {
                 </Text>
                 
             </Pressable>
+
+            <Pressable onPress={onPressIdioms} style={styles.mainButton}>
+                <Text style={styles.buttonText}>
+                    Idioms
+                </Text>
+                
+            </Pressable>
         </View>
      
     </View>
@@ -45,7 +56,7 @@ export default IntroPage
 const styles = StyleSheet.create({
     mainButton: {
       backgroundColor: "black",
-      marginBottom: 50,
+      marginBottom: 10,
       marginTop: 50,
       padding: 5,
       width: "60%",

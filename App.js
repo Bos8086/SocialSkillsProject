@@ -35,12 +35,6 @@ function AutisticSupportDrawerNavigator(){
       component={SupportServices}
       >
       </Drawer.Screen>
-      <Drawer.Screen
-        name='HomePage'
-        component={IntroPage}
-      >
-
-      </Drawer.Screen>
     </Drawer.Group>
   </Drawer.Navigator>
 }
@@ -49,8 +43,6 @@ function AutisticSupportDrawerNavigator(){
  
 
 export default function App() {
- 
-
   return (
      
     <NavigationContainer>
