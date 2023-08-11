@@ -38,12 +38,7 @@ const IntroPage = ({ navigation }) => {
                 
             </Pressable>
 
-            <Pressable onPress={onPressIdioms} style={styles.mainButton}>
-                <Text style={styles.buttonText}>
-                    Idioms
-                </Text>
-                
-            </Pressable>
+            
         </View>
      
     </View>

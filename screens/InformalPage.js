@@ -1,5 +1,13 @@
-import { View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Pressable,
+  Modal,
+} from "react-native";
 import React, { useState } from "react";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 const InformalPage = () => {
   const [social, setSocial] = useState(false);
@@ -11,42 +19,61 @@ const InformalPage = () => {
   const [displayText, setDisplayText] = useState(
     "Click on a button to display text."
   );
+  const[displayHeading,setDisplayHeading]= useState("heading")
   const [informalText, setInFormalText] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+
+
+  const onPressCloseModal = () => {
+    setModalVisible(!modalVisible)
+  }
 
   const onPressInFormal = () => {
     setInFormalText(!informalText);
   };
 
   const onPressSocial = () => {
+    setModalVisible(!modalVisible)
     setDisplayText(
       " Informal conversations often occur during social events like parties, barbecues, or casual get-togethers with friends and family. People engage in light-hearted discussions, share personal stories, or discuss shared interests."
     );
+    setDisplayHeading("Social Gatherings:")
   };
 
   const onPressFriends = () => {
+    setModalVisible(!modalVisible)
     setDisplayText(
       "When meeting friends at a café, park, or any relaxed setting, conversations tend to be informal. People catch up, share updates about their lives, discuss movies, music, sports, or simply engage in friendly banter."
     );
+    setDisplayHeading("Casual meetups with friends:")
   };
   const onPressNetworking = () => {
+    setModalVisible(!modalVisible)
     setDisplayText(
       " In less formal networking events, like mixers or informal industry gatherings, conversations may take a more relaxed tone. Professionals may engage in casual discussions,  exchange ideas, and establish connections in a less structured environment."
     );
+    setDisplayHeading("Informal networking events:")
   };
   const onPressConversations = () => {
+    setModalVisible(!modalVisible)
     setDisplayText(
       " While formal conversations dominate professional settings, informal conversations can still occur during lunch breaks, coffee breaks, or in more relaxed work environments. Colleagues may discuss weekend plans, hobbies, or current events."
     );
+    setDisplayHeading(" Informal conversations in the workplace:")
   };
   const onPressOnline = () => {
+    setModalVisible(!modalVisible)
     setDisplayText(
       " Informal conversations are prevalent in digital communication, such as messaging apps, social  media platforms, or online forums. People often use informal language, abbreviations, and emojis to express themselves in a casual and conversational manner."
     );
+    setDisplayHeading("Online or text-based conversations:")
   };
   const onPressAcquaintances = () => {
+    setModalVisible(!modalVisible)
     setDisplayText(
       " Conversations with acquaintances or people you meet casually in daily life, like waiting in line at a store or sitting next to someone on public transportation, tend to be more informal. These conversations often revolve around small talk, general interests, or current happenings."
     );
+    setDisplayHeading("Casual encounters with acquaintances:")
   };
 
   return (
@@ -59,20 +86,49 @@ const InformalPage = () => {
         <View style={styles.body}>
           <Pressable onPress={onPressInFormal} style={styles.mainButton}>
             <Text style={styles.mainButtonText}>
-              What are Formal Conversations
+              What are InFormal Conversations
             </Text>
           </Pressable>
           {informalText && (
             <Text>
-               Informal conversations are casual and relaxed interactions between individuals that do not adhere to strict social norms or formal etiquette. They typically involve friendly and informal language, often including slang, colloquialisms, and conversational shortcuts. Informal conversations are less structured and may touch upon a wide
-            range of topics, including personal experiences, hobbies, everyday
-            life, or social events.
+              Informal conversations are casual and relaxed interactions between
+              individuals that do not adhere to strict social norms or formal
+              etiquette. They typically involve friendly and informal language,
+              often including slang, colloquialisms, and conversational
+              shortcuts. Informal conversations are less structured and may
+              touch upon a wide range of topics, including personal experiences,
+              hobbies, everyday life, or social events.
             </Text>
           )}
 
           <Text style={styles.smallHeading}>
             Places where conversations have to be Informal
           </Text>
+
+          {/* //Modal Starting */}
+          <View>
+            <Modal animationType="fade" transparent visible={modalVisible}>
+              <View style={styles.centeredView}>
+                <View style={styles.modalView}>
+                  <View style={styles.closeButton}>
+                    <Pressable onPress={onPressCloseModal}>
+                      <AntDesign
+                      name="closesquare"
+                      size={50}
+                      />
+                    </Pressable>
+                  </View>
+                  <View style={styles.modalTextView}>
+                      <View style={styles.modalTextContainer}>
+                        <Text style={styles.headingText}>{displayHeading}</Text>
+                        <Text style={styles.bodyText}>{displayText}</Text>
+                      </View>
+                  </View>
+                </View>
+              </View>
+            </Modal>
+          </View>
+          {/* //Modal Endiing */}
 
           <View>
             <View style={styles.row}>
@@ -92,7 +148,10 @@ const InformalPage = () => {
             </View>
 
             <View style={styles.row}>
-              <Pressable onPress={onPressConversations} style={styles.smallButton}>
+              <Pressable
+                onPress={onPressConversations}
+                style={styles.smallButton}
+              >
                 <Text style={styles.smallButtonText}>
                   Informal conversations in the workplace:
                 </Text>
@@ -102,7 +161,10 @@ const InformalPage = () => {
                   Online or text-based conversations:
                 </Text>
               </Pressable>
-              <Pressable onPress={onPressAcquaintances} style={styles.smallButton}>
+              <Pressable
+                onPress={onPressAcquaintances}
+                style={styles.smallButton}
+              >
                 <Text style={styles.smallButtonText}>
                   Casual encounters with acquaintances:
                 </Text>
@@ -110,13 +172,6 @@ const InformalPage = () => {
             </View>
           </View>
         </View>
-
-        <View style={styles.textContent}>
-          <View>
-            <Text style={styles.bodyText}>{displayText}</Text>
-          </View>
-        </View>
-
       </ScrollView>
     </View>
   );
@@ -173,7 +228,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   bodyText: {
-    marginBottom: 10,
+    //marginBottom: 10,
+    alignSelf:"center"
   },
   bodyHeadingText: {
     fontWeight: "bold",
@@ -216,5 +272,64 @@ const styles = StyleSheet.create({
     marginLeft: 11,
     marginRight: 10,
   },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalView: {
+    width: "100%",
+    height: "100%",
+    // margin: 20,
+    backgroundColor: "rgba(149,149,155, 0.9)",
+    // backgroundColor: '#CCCCC9',
+    borderRadius: 20,
+    
+  },
+  modalTextView: {
+    opacity: 1,
+    position: "absolute",
+    top: 300,
+    left: 80,
+    height: "30%",
+    width: "70%",
+    borderRadius: 15,
+    elevation: 40,
+  },
+  closeButton:{
+    position:"absolute",
+    right:10,
+    top:100,
+    backgroundColor: "white",
+    width:"20%",
+    height:"10%",
+    borderRadius:30,
+    justifyContent:"center",
+    alignContent:"center",
+    alignItems:"center"
+  },
+  modalTextContainer: {
+    width:"100%",
+    backgroundColor: "white",
+    borderRadius: 30,
+    opacity:1,
+    padding:10,
+    shadowColor: '#000' ,
+    shadowOffset: { width: 0, height: 3  },
+    shadowOpacity: 0.7,
+    shadowRadius: 2,
+    elevation: 2,
+    height:"80%",
+    width:"100%",
+    //justifyContent:"center",
+  },
+  headingText:{
+    fontWeight:"bold",
+    textDecorationLine:"underline",
+    textDecorationStyle:"solid",
+    alignSelf:"center",
+    marginBottom:5,
+    marginTop:5
+  }
 });
 export default InformalPage;

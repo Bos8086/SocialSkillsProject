@@ -13,6 +13,8 @@ import InformalPage from './screens/InformalPage';
 import WelcomePage from './screens/WelcomePage';
 import Settings from './screens/Settings';
 import SupportServices from './screens/SupportServices';
+import ConversationsPage from './screens/ConversationsPage';
+import TipsPage from './screens/TipsPage';
 
 
 
@@ -28,11 +30,13 @@ function AutisticSupportDrawerNavigator(){
       <Drawer.Screen
         name='AutisticHomePage'
         component={NonAutistcHomePage}
+        options={{title:"Ways to Support"}}
       >    
       </Drawer.Screen>
       <Drawer.Screen 
       name='AutisticServices'
       component={SupportServices}
+      options={{title:"Support Services"}}
       >
       </Drawer.Screen>
     </Drawer.Group>
@@ -50,6 +54,7 @@ export default function App() {
       <Stack.Screen
         name='WelcomePage'
         component={WelcomePage}
+        options={{title:"Welcome"}}
       />
       <Stack.Screen
         name='Settings'
@@ -58,12 +63,22 @@ export default function App() {
       <Stack.Screen
         name="IntroPage"
         component={IntroPage}
-        options={{title:"HomePage"}}
+        options={{title:"Home Page"}}
       /> 
       <Stack.Screen
         name="AutisticHomePage"
         component={AutisticHomePage}
         options={{title:"Autistic"}}
+      />
+      <Stack.Screen
+        name="ConversationsPage"
+        component={ConversationsPage}
+        options={{title:"Conversations"}}
+      />
+      <Stack.Screen
+        name='TipsPage'
+        component={TipsPage}
+        options={{title:"Tips"}}
       />
       <Stack.Screen
         name='NonAutisticHomePage'

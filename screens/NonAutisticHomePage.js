@@ -5,6 +5,7 @@ import FontAws5 from "react-native-vector-icons/FontAwesome5";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { ScrollView } from "react-native-gesture-handler";
 
 
 
@@ -19,7 +20,8 @@ const BulletPoint = ({ children }) => {
 
 const NonAutistcHomePage = () => {
   return (
-    <View>
+    <ScrollView>
+      <View>
       <Text style={styles.headingText}>Ways to Support An Autistic Person</Text>
 
       <View style={styles.container}>
@@ -88,6 +90,8 @@ const NonAutistcHomePage = () => {
         </View>
       </View>
     </View>
+    </ScrollView>
+    
   );
 };
 
