@@ -5,7 +5,6 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -16,7 +15,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.innoexcell.SocialSkillsProject"
+      "bundleIdentifier": "com.innoexcell.SocialSkillsProject",
+      "userInterfaceStyle": "automatic"
     },
     "android": {
       "adaptiveIcon": {

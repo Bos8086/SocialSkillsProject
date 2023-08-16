@@ -1,7 +1,19 @@
-import { View, Text, Pressable, StyleSheet,Linking } from 'react-native'
-import React from 'react'
+import { View, Text, Pressable, StyleSheet,Linking, Appearance } from 'react-native'
+import React , {useState} from 'react'
+import darkMode from '../styles/darkMode';
+import * as Speech from 'expo-speech'
+
+
 
 const IntroPage = ({ navigation }) => {
+
+
+
+    // const [theme,setTheme] = useState(Appearance.getColorScheme());
+    // Appearance.addChangeListener((scheme) => {
+    //     console.log("scheme",scheme.colorScheme)
+    // })
+    const colorScheme = Appearance.getColorScheme();
 
     const onPressAutistic = () => {
         navigation.navigate("AutisticHomePage")
@@ -15,27 +27,40 @@ const IntroPage = ({ navigation }) => {
         Linking.openURL('https://www.ef.co.uk/english-resources/english-idioms/');
     }
 
-  return (
-    <View style={styles.mainView}>
+    const handleVoice = () => {
+        Speech.speak("I am here")
+        console.log("pressed")
+    }
 
-        <View style={styles.mainHeading}>
-            <Text style={styles.headingText}>Select the Option that applies to you</Text>
+   
+
+  return (
+    <View style={colorScheme == 'light'?styles.mainView:darkMode.mainView}>
+
+        <View style={colorScheme == 'light'?styles.mainHeading:darkMode.mainHeading}>
+            <Text style={colorScheme == 'light'?styles.headingText:darkMode.headingText}>Select the Option that applies to you</Text>
         </View>
 
-        <View style={styles.optionView}>
-            <Pressable onPress={onPressAutistic} style={styles.mainButton}>
-                <Text style={styles.buttonText}>
+        <View style={colorScheme == 'light'?styles.optionView:darkMode.optionView}>
+            <Pressable onPress={onPressAutistic} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
+                <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>
                     Autistic
                 </Text>   
             </Pressable>
-    
 
 
-            <Pressable onPress={onPressNonAutistic} style={styles.mainButton}>
-                <Text style={styles.buttonText}>
+            <Pressable onPress={onPressNonAutistic} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
+                <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>
                     Autistic Support
                 </Text>
+  
                 
+            </Pressable>
+
+            <Pressable onPress={handleVoice} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
+                <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>
+                    TTS Pressable
+                </Text>             
             </Pressable>
 
             

@@ -1,7 +1,10 @@
-import { View, Text, Pressable, StyleSheet,Linking } from "react-native";
+import { View, Text, Pressable, StyleSheet,Linking, Appearance } from "react-native";
 import React from "react";
+import darkMode from "../styles/darkMode";
 
 const AutisticHomePage = ({ navigation }) => {
+
+  const colorScheme = Appearance.getColorScheme();
 
   const onPressConversations = () => {
     navigation.navigate("ConversationsPage");
@@ -16,24 +19,24 @@ const AutisticHomePage = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.mainView}>
-      <View style={styles.mainHeading}>
-        <Text style={styles.headingText}>
+    <View  style={colorScheme == 'light'?styles.mainView:darkMode.mainView}>
+      <View style={colorScheme == 'light'?styles.mainHeading:darkMode.mainHeading}>
+        <Text style={colorScheme == 'light'?styles.headingText:darkMode.headingText}>
           Select an Option
         </Text>
       </View>
 
-      <View style={styles.optionView}>
-        <Pressable onPress={onPressConversations} style={styles.mainButton}>
-          <Text style={styles.buttonText}>Conversations</Text>
+      <View style={colorScheme == 'light'?styles.optionView:darkMode.optionView}>
+        <Pressable onPress={onPressConversations} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
+          <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Conversations</Text>
         </Pressable>
 
-        <Pressable onPress={onPressIdioms} style={styles.mainButton}>
-          <Text style={styles.buttonText}>Idioms</Text>
+        <Pressable onPress={onPressIdioms} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
+          <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Idioms</Text>
         </Pressable>
 
-        <Pressable onPress={onPressTips} style={styles.mainButton}>
-          <Text style={styles.buttonText}>Tips</Text>
+        <Pressable onPress={onPressTips} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
+          <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Tips</Text>
         </Pressable>
       </View>
     </View>

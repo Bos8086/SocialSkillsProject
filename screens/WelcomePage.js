@@ -1,9 +1,12 @@
-import { View, Text, TouchableWithoutFeedback, StyleSheet,Image } from "react-native";
+import { View, Text, TouchableWithoutFeedback, StyleSheet,Image,Appearance } from "react-native";
 import React , { useEffect } from "react";
 import * as Speech from 'expo-speech';
+import darkMode from '../styles/darkMode';
 
 
 const WelcomePage = ({ navigation }) => {
+
+  const colorScheme = Appearance.getColorScheme();
 
   const speakTextContinue = () => {
       const thingToSay = 'hellooooo';
@@ -28,9 +31,9 @@ const WelcomePage = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.mainView}>
-        <View style={styles.mainHeading}>
-            <Text style={styles.headingText}>Welcome</Text>
+    <View style={colorScheme == 'light'?styles.mainView:darkMode.mainView}>
+        <View style={colorScheme == 'light'?styles.mainHeading:darkMode.mainHeading}>
+            <Text style={colorScheme == 'light'?styles.headingText:darkMode.headingText}>Welcome</Text>
         </View>
 
 
@@ -44,14 +47,14 @@ const WelcomePage = ({ navigation }) => {
 
       <View style={styles.buttonContainer}>
         <TouchableWithoutFeedback onPress={buttonHandlerContinue}>
-          <View style={styles.button}>
+          <View style={colorScheme =='light'?styles.button:darkMode.button}>
             <Text style={styles.buttonText}>Click Here to continue </Text>
           </View>
         </TouchableWithoutFeedback>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableWithoutFeedback onPress={buttonHandlerSettings}>
-          <View style={styles.button}>
+          <View style={colorScheme =='light'?styles.button:darkMode.button}>
             <Text style={styles.buttonText}>Settings</Text>
           </View>
         </TouchableWithoutFeedback>
@@ -86,7 +89,7 @@ headingText:{
 },
 buttonContainer:{
     alignSelf:"center",
-    marginTop:10,
+    marginTop:10, 
 },
 homeImage:{
     alignSelf:"center",

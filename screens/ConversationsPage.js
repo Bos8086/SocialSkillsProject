@@ -1,14 +1,23 @@
-import { View, Text, StyleSheet,Pressable,Modal } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  Modal,
+  Appearance,
+} from "react-native";
 import React from "react";
+import darkMode from "../styles/darkMode";
 
 const ConversationsPage = ({ navigation }) => {
+  const colorScheme = Appearance.getColorScheme();
+
   const onPressFormal = () => {
     navigation.navigate("FormalPage");
   };
 
   const onPressInformal = () => {
     navigation.navigate("InformalPage");
-    
   };
 
   const onPressTips = () => {
@@ -16,20 +25,50 @@ const ConversationsPage = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.mainView}>
-      <View style={styles.mainHeading}>
-        <Text style={styles.headingText}>
-          Select an option 
+    <View style={colorScheme == "light" ? styles.mainView : darkMode.mainView}>
+      <View
+        style={
+          colorScheme == "light" ? styles.mainHeading : darkMode.mainHeading
+        }
+      >
+        <Text
+          style={
+            colorScheme == "light" ? styles.headingText : darkMode.headingText
+          }
+        >
+          Select an option
         </Text>
       </View>
 
       <View>
-        <Pressable onPress={onPressFormal} style={styles.mainButton}>
-          <Text style={styles.buttonText}>Formal</Text>
+        <Pressable
+          onPress={onPressFormal}
+          style={
+            colorScheme == "light" ? styles.mainButton : darkMode.mainButton
+          }
+        >
+          <Text
+            style={
+              colorScheme == "light" ? styles.buttonText : darkMode.buttonText
+            }
+          >
+            Formal
+          </Text>
         </Pressable>
 
-        <Pressable onPress={onPressInformal} style={styles.mainButton}>
-          <Text style={styles.buttonText}>InFormal</Text>
+        <Pressable
+          onPress={onPressInformal}
+          style={
+            colorScheme == "light" ? styles.mainButton : darkMode.mainButton
+          }
+        >
+          <Text
+            style={
+              colorScheme == "light" ? styles.buttonText : darkMode.buttonText
+            }
+          >
+            InFormal
+          </Text>
         </Pressable>
       </View>
     </View>

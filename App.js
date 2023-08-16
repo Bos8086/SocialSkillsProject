@@ -1,6 +1,6 @@
 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View ,Pressable} from 'react-native';
+import { StyleSheet, Text, View ,Pressable,Appearance,useWindowDimensions} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -15,6 +15,7 @@ import Settings from './screens/Settings';
 import SupportServices from './screens/SupportServices';
 import ConversationsPage from './screens/ConversationsPage';
 import TipsPage from './screens/TipsPage';
+import react , {useState} from 'react';
 
 
 
@@ -23,20 +24,34 @@ const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 
+const colorScheme = Appearance.getColorScheme();
+
+
+
+
 function AutisticSupportDrawerNavigator(){
-  return <Drawer.Navigator>
+  const dimensions = useWindowDimensions();
+  return <Drawer.Navigator
+  screenOptions={{
+    drawerStyle: {
+      backgroundColor: colorScheme=="light"?"white":"lightgrey",
+      width: dimensions.width / 2,
+    },
+  }}
+  >
     <Drawer.Group>
      
       <Drawer.Screen
         name='AutisticHomePage'
         component={NonAutistcHomePage}
-        options={{title:"Ways to Support"}}
+        options={{title:"Ways to Support",drawerActiveBackgroundColor:colorScheme=="light"?"blue":"grey",}}
       >    
       </Drawer.Screen>
       <Drawer.Screen 
       name='AutisticServices'
       component={SupportServices}
-      options={{title:"Support Services"}}
+      options={{title:"Support Services",drawerActiveBackgroundColor:colorScheme=="light"?"blue":"grey"}}
+      
       >
       </Drawer.Screen>
     </Drawer.Group>
@@ -47,6 +62,8 @@ function AutisticSupportDrawerNavigator(){
  
 
 export default function App() {
+
+  
   return (
      
     <NavigationContainer>
