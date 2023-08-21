@@ -371,6 +371,7 @@ const styles = StyleSheet.create({
   bodyText: {
     //marginBottom: 10,
     alignSelf: "center",
+    color:"black"
   },
   bodyHeadingText: {
     fontWeight: "bold",
@@ -464,6 +465,14 @@ const styles = StyleSheet.create({
     //justifyContent:"center",
   },
   headingText: {
+    fontWeight: "bold",
+    textDecorationLine: "underline",
+    textDecorationStyle: "solid",
+    alignSelf: "center",
+    marginBottom: 5,
+    marginTop: 5,
+  },
+  headingModalText: {
     fontWeight: "bold",
     textDecorationLine: "underline",
     textDecorationStyle: "solid",

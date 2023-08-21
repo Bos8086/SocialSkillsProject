@@ -403,7 +403,7 @@ const styles = StyleSheet.create({
     color: "black",
   },
   bodyText: {
-    marginBottom: 100,
+    //marginBottom: 100,
     color: "black",
   },
   bodyHeadingText: {
@@ -494,7 +494,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.7,
     shadowRadius: 2,
     elevation: 2,
-    height: "80%",
+    height: "90%",
     width: "100%",
     //justifyContent:"center",
   },

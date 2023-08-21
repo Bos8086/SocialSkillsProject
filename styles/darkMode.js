@@ -40,6 +40,7 @@ const darkMode = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 50,
+    marginBottom:50
   },
   bulletPoint: {
     flexDirection: "row",
@@ -95,7 +96,6 @@ const darkMode = StyleSheet.create({
     marginRight: 10,
   },
   bodyText: {
-    marginBottom: 100,
     color:"white"
   },
   smallButtonText: {
@@ -136,7 +136,7 @@ const darkMode = StyleSheet.create({
     shadowOpacity: 0.7,
     shadowRadius: 2,
     elevation: 2,
-    height:"80%",
+    height:"90%",
     width:"100%",
     //justifyContent:"center",
   },
@@ -180,6 +180,9 @@ const darkMode = StyleSheet.create({
     color:"white"
   },
   normalText:{
+    color:"white"
+  },
+  settingsText:{
     color:"white"
   }
 });

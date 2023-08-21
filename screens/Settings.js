@@ -1,29 +1,32 @@
-import { View, Text, TouchableWithoutFeedback, StyleSheet,Image } from "react-native";
+import { View, Text, TouchableWithoutFeedback, StyleSheet,Image,Appearance } from "react-native";
 import React , { useEffect,useState } from "react";
 import * as Speech from 'expo-speech';
 import Entypo from "react-native-vector-icons/Entypo"
 import FontAwesome from "react-native-vector-icons/FontAwesome"
+import darkMode from "../styles/darkMode";
 
 const Settings = () => {
 
-    const [darkMode, setDarkMode] = useState(true);
+    const [darkModeButton, setDarkMode] = useState(true);
+
+    const colorScheme = Appearance.getColorScheme();
 
   return (
-    <View style={styles.mainView}> 
-      <View style={styles.mainHeading}>
-            <Text style={styles.headingText}>Settings</Text>
+    <View style={colorScheme == 'light'?styles.mainView:darkMode.mainView}> 
+      <View style={colorScheme == 'light'?styles.mainHeading:darkMode.mainHeading}>
+            <Text style={colorScheme == 'light'?styles.headingText:darkMode.headingText}>Settings</Text>
         </View>
         <View style={styles.content}>
            <View style={styles.language}>
-            <Text>
+            <Text style={colorScheme == 'light'?styles.settingsText:darkMode.settingsText}>
                 Language
             </Text>
-            <Text>
+            <Text style={colorScheme == 'light'?styles.settingsText:darkMode.settingsText}>
                 English
             </Text>
            </View>
            <View style={styles.language}>
-            <Text>
+            <Text style={colorScheme == 'light'?styles.settingsText:darkMode.settingsText}>
                 Dark Mode
             </Text>
             <TouchableWithoutFeedback onPress={() => setDarkMode(!darkMode)}>
@@ -83,6 +86,9 @@ const styles = StyleSheet.create({
     flexDirection:"row",
     justifyContent:"space-between",
     marginTop:30
+  },
+  settingsText:{
+    color:"black"
   }
   });
 

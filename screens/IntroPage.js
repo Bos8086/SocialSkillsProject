@@ -57,11 +57,11 @@ const IntroPage = ({ navigation }) => {
                 
             </Pressable>
 
-            <Pressable onPress={handleVoice} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
+            {/* <Pressable onPress={handleVoice} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
                 <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>
                     TTS Pressable
                 </Text>             
-            </Pressable>
+            </Pressable> */}
 
             
         </View>
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         marginTop:50,
+        marginBottom:50
     },
     headingText:{
         fontSize:20,

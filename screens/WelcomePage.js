@@ -9,7 +9,7 @@ const WelcomePage = ({ navigation }) => {
   const colorScheme = Appearance.getColorScheme();
 
   const speakTextContinue = () => {
-      const thingToSay = 'hellooooo';
+      const thingToSay = 'continue';
       Speech.speak(thingToSay);  
   };
 
@@ -21,12 +21,12 @@ const WelcomePage = ({ navigation }) => {
 
 
   const buttonHandlerContinue = () => {
-    speakTextContinue
+    speakTextContinue()
     navigation.navigate("IntroPage");
   };
 
   const buttonHandlerSettings = () => {
-    speakTextSettings
+    speakTextSettings()
     navigation.navigate("Settings");
   };
 
@@ -82,6 +82,7 @@ mainHeading:{
     justifyContent:"center",
     alignItems:"center",
     marginTop:50,
+    marginBottom:50
 },
 headingText:{
     fontSize:20,
@@ -99,7 +100,9 @@ homeImage:{
 },
 viewImage:{
     width:"100%",
-    height:"30%"
+    height:"30%",
+    marginBottom:30,
+    
 }
 });
 
