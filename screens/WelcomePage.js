@@ -2,6 +2,7 @@ import { View, Text, TouchableWithoutFeedback, StyleSheet,Image,Appearance } fro
 import React , { useEffect } from "react";
 import * as Speech from 'expo-speech';
 import darkMode from '../styles/darkMode';
+import textSpeech from "./Settings";
 
 
 const WelcomePage = ({ navigation }) => {

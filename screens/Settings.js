@@ -8,8 +8,11 @@ import darkMode from "../styles/darkMode";
 const Settings = () => {
 
     const [darkModeButton, setDarkMode] = useState(true);
+    const [textToSpeechButton, setTextToSpeechButton] = useState(true);
 
     const colorScheme = Appearance.getColorScheme();
+
+    
 
   return (
     <View style={colorScheme == 'light'?styles.mainView:darkMode.mainView}> 
@@ -34,6 +37,18 @@ const Settings = () => {
                     <FontAwesome  name={darkMode ? 'toggle-off' : 'toggle-on'} size={30} />
                 </View>
             </TouchableWithoutFeedback>
+            
+           </View>
+           <View style={styles.language}>
+            <Text style={colorScheme == 'light'?styles.settingsText:darkMode.settingsText}>
+                Text to speech
+            </Text>
+            <TouchableWithoutFeedback onPress={() => setTextToSpeechButton(!textToSpeechButton)}>
+                <View>
+                    <FontAwesome  name={textToSpeechButton ? 'toggle-off' : 'toggle-on'} size={30} />
+                </View>
+            </TouchableWithoutFeedback>
+            
            </View>
         </View>
     </View>
