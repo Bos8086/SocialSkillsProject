@@ -136,7 +136,7 @@ const darkMode = StyleSheet.create({
     shadowOpacity: 0.7,
     shadowRadius: 2,
     elevation: 2,
-    height:"90%",
+    height:"100%",
     width:"100%",
     //justifyContent:"center",
   },

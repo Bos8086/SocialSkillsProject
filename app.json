@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Skills Builder",
+    "name": "Communication Skills Builder",
     "slug": "SocialSkillsProject",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,10 +20,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/couple.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.innoexcell.SocialSkillsProject"
+      "package": "com.innoexcell.SocialSkillsProject",
+      "versionCode":"3" 
+      
     },
     "web": {
       "favicon": "./assets/favicon.png"
