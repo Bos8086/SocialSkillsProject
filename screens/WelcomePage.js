@@ -1,17 +1,77 @@
-import { View, Text, TouchableWithoutFeedback, StyleSheet,Image,Appearance } from "react-native";
-import React , { useEffect } from "react";
+import { View, Text, TouchableWithoutFeedback, StyleSheet,Image,Appearance, } from "react-native";
+import React , { useEffect,useContext ,useState} from "react";
 import * as Speech from 'expo-speech';
 import darkMode from '../styles/darkMode';
-import textSpeech from "./Settings";
+import Settings from "./Settings";
+import MyContext from '../utils/context'; 
+import {secureGet, secureSave,getLocal} from "../utils/storage"
+import { getData } from "../utils/helper";
+
+
+
+
 
 
 const WelcomePage = ({ navigation }) => {
 
+
+ const [textToSpeechValue , setTextToSpeechValue] = useState("")
+
+const asyncValue = async () => {
+  await getData("textToSpeech")
+  .then(data => data)
+  .then(value => {
+    //a state or constant = value
+    console.log(" Welcome yourKey Value:  " + value)
+  })
+  .catch(err => console.log(err))
+}
+
+//  getMyStringValue = async () => {
+//   try {
+//     console.log("I am in here")
+//      await AsyncStorage.getItem('textToSpeech').then((data) => {
+//       console.log(data)
+//       return data;
+//      })
+//   } catch(e) {
+//     // read error
+//   }
+//   console.log('Done.')
+// }
+
+ 
+ useEffect(()=>{
+  const myStringValue = asyncValue()
+  setTextToSpeechValue(myStringValue)
+  console.log("This is my text to speech value",textToSpeechValue)
+ },[])
+
+//  export const getLocal = async (key: string) => {
+//   try {
+//     await AsyncStorage.getItem(key).then((data: any) => {
+//       // console.log(data);
+//       return data;
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+ 
+
   const colorScheme = Appearance.getColorScheme();
+  //const {textToSpeech} = useContext(textToSpeech)
+
+  
+  
 
   const speakTextContinue = () => {
+    console.log(textToSpeechValue)
+    if (textToSpeechValue == true) {
       const thingToSay = 'continue';
       Speech.speak(thingToSay);  
+    }
   };
 
   const speakTextSettings = () => {
