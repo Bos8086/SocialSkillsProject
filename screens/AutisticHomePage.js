@@ -1,8 +1,10 @@
-import { View, Text, Pressable, StyleSheet,Linking, Appearance } from "react-native";
+import { View, Text, Pressable, StyleSheet,Linking, Appearance,ScrollView } from "react-native";
 import React from "react";
 import darkMode from "../styles/darkMode";
 
 const AutisticHomePage = ({ navigation }) => {
+
+
 
   const colorScheme = Appearance.getColorScheme();
 
@@ -18,8 +20,13 @@ const AutisticHomePage = ({ navigation }) => {
     navigation.navigate("TipsPage");
   };
 
+  const onPressBodyLanguage = () => {
+    navigation.navigate("BodyLanguage");
+  }
+
   return (
-    <View  style={colorScheme == 'light'?styles.mainView:darkMode.mainView}>
+    <ScrollView>
+      <View  style={colorScheme == 'light'?styles.mainView:darkMode.mainView}>
       <View style={colorScheme == 'light'?styles.mainHeading:darkMode.mainHeading}>
         <Text style={colorScheme == 'light'?styles.headingText:darkMode.headingText}>
           Select an Option
@@ -38,8 +45,14 @@ const AutisticHomePage = ({ navigation }) => {
         <Pressable onPress={onPressTips} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
           <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Tips</Text>
         </Pressable>
+
+        <Pressable onPress={onPressBodyLanguage} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
+          <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Body Language</Text>
+        </Pressable>
       </View>
     </View>
+    </ScrollView>
+    
   );
 };
 

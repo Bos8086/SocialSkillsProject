@@ -21,6 +21,7 @@ import Settings from "./screens/Settings";
 import SupportServices from "./screens/SupportServices";
 import ConversationsPage from "./screens/ConversationsPage";
 import TipsPage from "./screens/TipsPage";
+import BodyLanguage from "./screens/BodyLanguage";
 import {MyProvider}  from "./utils/context"; // Import your context provider
 
 const Stack = createNativeStackNavigator();
@@ -109,6 +110,11 @@ export default function App() {
             name="InformalPage"
             component={InformalPage}
             options={{ title: " InFormal Conversations " }}
+          />
+          <Stack.Screen 
+            name="BodyLanguage"
+            component={BodyLanguage}
+            options={{ title: " Body Language " }}
           />
 
           <Stack.Screen name="ProfilePage" component={ProfilePage} />
