@@ -10,6 +10,7 @@ import darkMode from "../styles/darkMode";
 
 
 
+
 const BulletPoint = ({ children }) => {
   const colorScheme = Appearance.getColorScheme();
   //const colorScheme = "light"
@@ -21,9 +22,14 @@ const BulletPoint = ({ children }) => {
   );
 };
 
-const NonAutistcHomePage = () => {
+const NonAutistcHomePage = ({navigation}) => {
+
+
   const colorScheme = Appearance.getColorScheme();
   //const colorScheme = "light"
+
+
+  
 
   return (
     <ScrollView>
@@ -100,6 +106,8 @@ const NonAutistcHomePage = () => {
     
   );
 };
+
+
 
 const styles = StyleSheet.create({
   mainButton: {

@@ -1,11 +1,11 @@
-import { View, Text, Pressable, StyleSheet,Linking, Appearance,ScrollView } from "react-native";
+import { View, Text, Pressable, StyleSheet,Linking, Appearance,ScrollView, } from "react-native";
 import React from "react";
 import darkMode from "../styles/darkMode";
 
 const AutisticHomePage = ({ navigation }) => {
 
 
-
+  
   const colorScheme = Appearance.getColorScheme();
 
   const onPressConversations = () => {
@@ -13,16 +13,14 @@ const AutisticHomePage = ({ navigation }) => {
   };
 
   const onPressIdioms = () => {
-    Linking.openURL("https://www.ef.co.uk/english-resources/english-idioms/");
+    navigation.navigate("IdiomsPage");;
   };
 
   const onPressTips = () => {
     navigation.navigate("TipsPage");
   };
 
-  const onPressBodyLanguage = () => {
-    navigation.navigate("BodyLanguage");
-  }
+  
 
   return (
     <ScrollView>
@@ -46,9 +44,7 @@ const AutisticHomePage = ({ navigation }) => {
           <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Tips</Text>
         </Pressable>
 
-        <Pressable onPress={onPressBodyLanguage} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
-          <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Body Language</Text>
-        </Pressable>
+       
       </View>
     </View>
     </ScrollView>

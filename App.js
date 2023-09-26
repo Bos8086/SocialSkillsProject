@@ -6,6 +6,7 @@ import {
   Pressable,
   Appearance,
   useWindowDimensions,
+  Button
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -23,6 +24,12 @@ import ConversationsPage from "./screens/ConversationsPage";
 import TipsPage from "./screens/TipsPage";
 import BodyLanguage from "./screens/BodyLanguage";
 import {MyProvider}  from "./utils/context"; // Import your context provider
+import IdiomsPage from "./screens/IdiomsPage";
+import FormalHomePage from "./screens/FormalHomePage";
+import InformalHomePage from "./screens/InformalHomePage";
+import FormalQuizPage from "./screens/FormalQuizPage";
+import InformalQuizPage from "./screens/InformalQuizPage";
+import DisclaimerScreen from "./screens/DisclaimerScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,7 +37,7 @@ const Drawer = createDrawerNavigator();
 
 const colorScheme = Appearance.getColorScheme();
 
-function AutisticSupportDrawerNavigator() {
+const AutisticSupportDrawerNavigator = () => {
   const dimensions = useWindowDimensions();
   return (
     <Drawer.Navigator
@@ -40,6 +47,7 @@ function AutisticSupportDrawerNavigator() {
           width: dimensions.width / 2,
         },
       }}
+      
     >
       <Drawer.Group>
         <Drawer.Screen
@@ -47,8 +55,12 @@ function AutisticSupportDrawerNavigator() {
           component={NonAutistcHomePage}
           options={{
             title: "Ways to Support",
+            headerRight: () => (
+              <Button title="Back" onPress={() => navigation.navigation(" Autistc Support")} />
+            ),
             drawerActiveBackgroundColor:
               colorScheme == "light" ? "blue" : "grey",
+            
           }}
         ></Drawer.Screen>
         <Drawer.Screen
@@ -70,6 +82,12 @@ export default function App() {
    
       <NavigationContainer>
         <Stack.Navigator>
+        <Stack.Screen
+            name="DisclaimerScreen"
+            component={DisclaimerScreen}
+            options={{ title: "Disclaimer" }}
+          />
+
           <Stack.Screen
             name="WelcomePage"
             component={WelcomePage}
@@ -99,12 +117,37 @@ export default function App() {
           <Stack.Screen
             name="NonAutisticHomePage"
             component={AutisticSupportDrawerNavigator}
-            options={{ title: " Autistc Support" }}
+            //options={{ headerShown: false }}
+            options={{ 
+              title: " Autistc Support",
+             
+
+          }}
           />
           <Stack.Screen
             name="FormalPage"
             component={FormalPage}
             options={{ title: " Formal Conversations " }}
+          />
+           <Stack.Screen
+            name="FormalHomePage"
+            component={FormalHomePage}
+            options={{ title: " Formal HomePage " }}
+          />
+          <Stack.Screen
+            name="FormalQuizPage"
+            component={FormalQuizPage}
+            options={{ title: " Formal Quiz " }}
+          />
+          <Stack.Screen
+            name="InFormalQuizPage"
+            component={InformalQuizPage}
+            options={{ title: " InFormal Quiz " }}
+          />
+          <Stack.Screen
+            name="InFormalHomePage"
+            component={InformalHomePage}
+            options={{ title: " InFormal HomePage " }}
           />
           <Stack.Screen
             name="InformalPage"
@@ -117,7 +160,15 @@ export default function App() {
             options={{ title: " Body Language " }}
           />
 
+          <Stack.Screen 
+            name="IdiomsPage"
+            component={IdiomsPage}
+            options={{ title: " Idioms " }}
+          />
+
           <Stack.Screen name="ProfilePage" component={ProfilePage} />
+
+
         </Stack.Navigator>
       </NavigationContainer>
     

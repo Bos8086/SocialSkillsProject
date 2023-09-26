@@ -1,37 +1,22 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  Modal,
-  Appearance,
-} from "react-native";
+import { View, Text, StyleSheet, Appearance, Pressable } from "react-native";
 import React from "react";
 import darkMode from "../styles/darkMode";
-import { ScrollView } from "react-native-gesture-handler";
 
-const ConversationsPage = ({ navigation }) => {
+const InformalHomePage = ({navigation}) => {
   const colorScheme = Appearance.getColorScheme();
 
-  const onPressFormal = () => {
-    navigation.navigate("FormalHomePage");
+  const onPressExamples = () => {
+    navigation.navigate("InformalPage");
   };
 
-  const onPressInformal = () => {
-    navigation.navigate("InFormalHomePage");
+  const onPressQuizes = () => {
+    navigation.navigate("InFormalQuizPage");
   };
-
-  const onPressTips = () => {
-    Linking.openURL("https://www.ef.co.uk/english-resources/english-idioms/");
-  };
-
-  const onPressBodyLanguage = () => {
-    navigation.navigate("BodyLanguage");
-  }
 
   return (
-    <ScrollView>
-       <View style={colorScheme == "light" ? styles.mainView : darkMode.mainView}>
+    <View
+      style={colorScheme == "light" ? styles.optionView : darkMode.optionView}
+    >
       <View
         style={
           colorScheme == "light" ? styles.mainHeading : darkMode.mainHeading
@@ -42,48 +27,35 @@ const ConversationsPage = ({ navigation }) => {
             colorScheme == "light" ? styles.headingText : darkMode.headingText
           }
         >
-          Select an option
+          Select an Option
         </Text>
       </View>
-
-      <View>
-        <Pressable
-          onPress={onPressFormal}
+      <Pressable
+        onPress={onPressExamples}
+        style={colorScheme == "light" ? styles.mainButton : darkMode.mainButton}
+      >
+        <Text
           style={
-            colorScheme == "light" ? styles.mainButton : darkMode.mainButton
+            colorScheme == "light" ? styles.buttonText : darkMode.buttonText
           }
         >
-          <Text
-            style={
-              colorScheme == "light" ? styles.buttonText : darkMode.buttonText
-            }
-          >
-            Formal
-          </Text>
-        </Pressable>
+          Examples
+        </Text>
+      </Pressable>
 
-        <Pressable
-          onPress={onPressInformal}
+      <Pressable
+        onPress={onPressQuizes}
+        style={colorScheme == "light" ? styles.mainButton : darkMode.mainButton}
+      >
+        <Text
           style={
-            colorScheme == "light" ? styles.mainButton : darkMode.mainButton
+            colorScheme == "light" ? styles.buttonText : darkMode.buttonText
           }
         >
-          <Text
-            style={
-              colorScheme == "light" ? styles.buttonText : darkMode.buttonText
-            }
-          >
-            InFormal
-          </Text>
-        </Pressable>
-
-        <Pressable onPress={onPressBodyLanguage} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
-          <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Body Language</Text>
-        </Pressable>
-      </View>
+          Quizes
+        </Text>
+      </Pressable>
     </View>
-    </ScrollView>
-   
   );
 };
 
@@ -187,4 +159,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ConversationsPage;
+export default InformalHomePage;
