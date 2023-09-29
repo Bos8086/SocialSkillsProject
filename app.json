@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Communication Skills Builder",
+    "slug": "SocialSkillsProject",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/couple.png",
+    "splash": {
+      "image": "./assets/couple.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.innoexcell.SocialSkillsProject",
+      "userInterfaceStyle": "automatic"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/couple.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.innoexcell.SocialSkillsProject",
+      "versionCode":"6" 
+      
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "357953d9-9a2b-45f2-9780-377837b82d47"
+      }
+    }
+  }
+}
