@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Communication Skills Builder",
-    "slug": "SocialSkillsProject",
+    "slug": "mastersprojectrebuild",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/couple.png",
@@ -10,6 +10,8 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+
+    
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -24,16 +26,16 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.innoexcell.SocialSkillsProject",
-      "versionCode":"6" 
-      
+      "versionCode": "6"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "357953d9-9a2b-45f2-9780-377837b82d47"
+        "projectId": "55ba9c2d-14bd-49eb-8933-cd4ddb71b854"
       }
-    }
+    },
+    "owner": "bos8086"
   }
 }

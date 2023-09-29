@@ -30,6 +30,7 @@ import InformalHomePage from "./screens/InformalHomePage";
 import FormalQuizPage from "./screens/FormalQuizPage";
 import InformalQuizPage from "./screens/InformalQuizPage";
 import DisclaimerScreen from "./screens/DisclaimerScreen";
+import 'expo-dev-client';
 
 const Stack = createNativeStackNavigator();
 
