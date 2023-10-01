@@ -10,8 +10,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-
-    
+    "plugins": [
+      "expo-dev-client"
+    ],
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -26,7 +27,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.innoexcell.SocialSkillsProject",
-      "versionCode": "6"
+      "versionCode": 6
     },
     "web": {
       "favicon": "./assets/favicon.png"

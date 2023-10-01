@@ -19,8 +19,9 @@
       }
     },
     "preview3": {
-      "developmentClient": true
-    },
+			"developmentClient": true,
+			"distribution": "internal"
+		},
     "production": {}
   },
   "submit": {

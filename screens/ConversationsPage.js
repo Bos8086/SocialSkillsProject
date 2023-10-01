@@ -3,7 +3,6 @@ import {
   Text,
   StyleSheet,
   Pressable,
-  Modal,
   Appearance,
 } from "react-native";
 import React from "react";

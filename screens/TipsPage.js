@@ -1,10 +1,7 @@
 import { View, Text, StyleSheet , Appearance } from "react-native";
 import React from "react";
 import Fontisto from "react-native-vector-icons/Fontisto";
-import FontAws5 from "react-native-vector-icons/FontAwesome5";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import darkMode from "../styles/darkMode";
 
 

@@ -1,5 +1,5 @@
 import { View, Text, Pressable, StyleSheet,Linking, Appearance } from 'react-native'
-import React , {useState} from 'react'
+import React  from 'react'
 import darkMode from '../styles/darkMode';
 import * as Speech from 'expo-speech'
 

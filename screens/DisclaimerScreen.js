@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Pressable,Appearance } from 'react-native'
 import React from 'react'
+import darkMode from "../styles/darkMode";
 
 const DisclaimerScreen = ({navigation}) => {
     const onPressContine = () => {

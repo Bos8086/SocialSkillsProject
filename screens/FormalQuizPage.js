@@ -9,13 +9,9 @@ import {
 import { formalQuestionBank } from "../utils/DummyData";
 import React, { useState, useEffect } from "react";
 import * as Progress from "react-native-progress";
-import Fontisto from "react-native-vector-icons/Fontisto";
-import FontAws5 from "react-native-vector-icons/FontAwesome5";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { COLORS } from "../utils/constants";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { flattenDiagnosticMessageText } from "typescript";
+import darkMode from "../styles/darkMode";
 
 const FormalQuizPage = ({navigation}) => {
   const [Exam, setExam] = useState(false);

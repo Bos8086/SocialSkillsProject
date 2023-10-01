@@ -1,10 +1,7 @@
 import { View, Text, TouchableWithoutFeedback, StyleSheet,Image,Appearance, } from "react-native";
-import React , { useEffect,useContext ,useState} from "react";
+import React , { useEffect,useState} from "react";
 import * as Speech from 'expo-speech';
 import darkMode from '../styles/darkMode';
-import Settings from "./Settings";
-import MyContext from '../utils/context'; 
-import {secureGet, secureSave,getLocal} from "../utils/storage"
 import { getData } from "../utils/helper";
 
 

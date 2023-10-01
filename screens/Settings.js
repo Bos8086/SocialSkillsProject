@@ -1,11 +1,8 @@
-import { View, Text, TouchableWithoutFeedback, StyleSheet,Image,Appearance } from "react-native";
-import React , { useEffect,useState,useContext,createContext } from "react";
-import * as Speech from 'expo-speech';
-import Entypo from "react-native-vector-icons/Entypo"
+import { View, Text, TouchableWithoutFeedback, StyleSheet,Appearance } from "react-native";
+import React , { useEffect,useState } from "react";
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import darkMode from "../styles/darkMode";
-import { createSlice, configureStore } from '@reduxjs/toolkit'
-import {secureGet, secureSave,storeLocal,secureDelete} from "../utils/storage"
+import {storeLocal,secureDelete} from "../utils/storage"
 import { getData } from "../utils/helper";
 
 
