@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Appearance, Pressable } from "react-native";
 import React from "react";
 import darkMode from "../styles/darkMode";
 
-const InformalHomePage = ({navigation}) => {
+const InformalHomePage = ({ navigation }) => {
   const colorScheme = Appearance.getColorScheme();
 
   const onPressExamples = () => {
@@ -14,47 +14,53 @@ const InformalHomePage = ({navigation}) => {
   };
 
   return (
-    <View
-      style={colorScheme == "light" ? styles.optionView : darkMode.optionView}
-    >
+  
+    <View style={colorScheme == "light" ? styles.mainView : darkMode.mainView}>
       <View
-        style={
-          colorScheme == "light" ? styles.mainHeading : darkMode.mainHeading
-        }
       >
-        <Text
+        <View
           style={
-            colorScheme == "light" ? styles.headingText : darkMode.headingText
+            colorScheme == "light" ? styles.mainHeading : darkMode.mainHeading
           }
         >
-          Select an Option
-        </Text>
-      </View>
-      <Pressable
-        onPress={onPressExamples}
-        style={colorScheme == "light" ? styles.mainButton : darkMode.mainButton}
-      >
-        <Text
+          <Text
+            style={
+              colorScheme == "light" ? styles.headingText : darkMode.headingText
+            }
+          >
+            Select an Option
+          </Text>
+        </View>
+        <Pressable
+          onPress={onPressExamples}
           style={
-            colorScheme == "light" ? styles.buttonText : darkMode.buttonText
+            colorScheme == "light" ? styles.mainButton : darkMode.mainButton
           }
         >
-          Examples
-        </Text>
-      </Pressable>
+          <Text
+            style={
+              colorScheme == "light" ? styles.buttonText : darkMode.buttonText
+            }
+          >
+            Examples
+          </Text>
+        </Pressable>
 
-      <Pressable
-        onPress={onPressQuizes}
-        style={colorScheme == "light" ? styles.mainButton : darkMode.mainButton}
-      >
-        <Text
+        <Pressable
+          onPress={onPressQuizes}
           style={
-            colorScheme == "light" ? styles.buttonText : darkMode.buttonText
+            colorScheme == "light" ? styles.mainButton : darkMode.mainButton
           }
         >
-          Quizes
-        </Text>
-      </Pressable>
+          <Text
+            style={
+              colorScheme == "light" ? styles.buttonText : darkMode.buttonText
+            }
+          >
+            Quizes
+          </Text>
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -133,6 +139,7 @@ const styles = StyleSheet.create({
   smallButtonText: {
     fontSize: 15,
     color: "white",
+    flexWrap:"wrap"
   },
   smallButton: {
     backgroundColor: "black",

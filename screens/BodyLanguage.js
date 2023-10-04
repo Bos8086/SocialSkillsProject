@@ -3,14 +3,22 @@ import {
   Text,
   StyleSheet,
   Pressable,
-  Modal,
   Appearance,
+  Modal,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import darkMode from "../styles/darkMode";
 import { ScrollView } from "react-native-gesture-handler";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 const BodyLanguage = () => {
+  const [informalText, setInFormalText] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [displayHeading, setDisplayHeading] = useState("heading");
+  const [displayText, setDisplayText] = useState(
+    "Click on a button to display text."
+  );
+
   const colorScheme = Appearance.getColorScheme();
 
   const BulletPoint = ({ children }) => {
@@ -32,111 +40,256 @@ const BodyLanguage = () => {
     );
   };
 
-  return (
-    <ScrollView>
-      <View style={colorScheme == "light" ? styles.mainView : darkMode.mainView}>
-      <Text
-        style={
-          colorScheme == "light" ? styles.mainInfoText : darkMode.mainInfoText
-        }
-      >
-        Body language refers to the non-verbal communication cues that
-        individuals use to convey their thoughts, feelings, and intentions. It
-        involves the use of facial expressions, gestures, posture, and other
-        physical movements to communicate without words. Body language can be a
-        powerful form of communication as it can convey emotions, attitudes, and
-        messages, often subconsciously.
-      </Text>
+  const onPressBodyLanguage = () => {
+    setInFormalText(!informalText);
+  };
 
+  const onPressCloseModal = () => {
+    setModalVisible(!modalVisible);
+  };
+
+  const onPressPositive = () => {
+    setModalVisible(!modalVisible);
+    setDisplayText(
+      " This type of body language conveys openness, approchability and confidence Examples Include : Smiling , Open Posture , Relaxed Posture , Nodding "
+    );
+    setDisplayHeading("Positive Body Language");
+  };
+
+  const onPressNegative = () => {
+    setModalVisible(!modalVisible);
+    setDisplayText(
+      "This type of body language conveys uncomfortability , disinterest , discomfort   Examples Include : Closed Posture , Sighing , Frowning , Interrupting "
+    );
+    setDisplayHeading("Negative Body Language");
+  };
+
+  return (
+    <ScrollView
+      style={colorScheme == "light" ? styles.mainView : darkMode.mainView}
+    >
       <View>
-        <Text
+        <Pressable
+          onPress={onPressBodyLanguage}
           style={
-            colorScheme == "light" ? styles.smallHeading : darkMode.smallHeading
+            colorScheme == "light" ? styles.mainButton : darkMode.mainButton
           }
         >
-          Types of Body language
-        </Text>
+          <Text
+            style={
+              colorScheme == "light"
+                ? styles.mainButtonText
+                : darkMode.mainButtonText
+            }
+          >
+            What is Body Language
+          </Text>
+        </Pressable>
+
+        {informalText && (
+          <Text
+            style={
+              colorScheme == "light"
+                ? styles.mainInfoText
+                : darkMode.mainInfoText
+            }
+          >
+            Body language refers to the non-verbal communication cues that
+            individuals use to convey their thoughts, feelings, and intentions.
+            It involves the use of facial expressions, gestures, posture, and
+            other physical movements to communicate without words. Body language
+            can be a powerful form of communication as it can convey emotions,
+            attitudes, and messages, often subconsciously.
+          </Text>
+        )}
 
         <View>
-          <Text>Positive Body Language</Text>
-          <Text>Negative Body Language</Text>
-        </View>
-
-        <View>
-          <Text
-            style={
-              colorScheme == "light"
-                ? styles.smallHeading
-                : darkMode.smallHeading
-            }
-          >
-            Positive Body Language
-          </Text>
-          <Text>
-            This type of body language conveys openness, approchability and
-            confidence
-          </Text>
-          <Text
-            style={
-              colorScheme == "light"
-                ? styles.smallHeading
-                : darkMode.smallHeading
-            }
-          >
-            Examples Include
-          </Text>
-          <View style={styles.bulletPointView}>
-            <BulletPoint>Smiling</BulletPoint>
-          </View>
-          <View style={styles.bulletPointView}>
-            <BulletPoint>Open Posture</BulletPoint>
-          </View>
-          <View style={styles.bulletPointView}>
-            <BulletPoint>Relaxed Posture</BulletPoint>
-          </View>
-          <View style={styles.bulletPointView}>
-            <BulletPoint>Nodding</BulletPoint>
+          <View style={{alignSelf:"center"}}>
+            <Text
+              style={
+                colorScheme == "light"
+                  ? styles.smallHeading
+                  : darkMode.smallHeading
+              }
+            >
+              Types of Body language
+            </Text>
           </View>
 
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-around" }}
+          >
+            <Pressable
+              onPress={onPressPositive}
+              style={
+                colorScheme == "light"
+                  ? styles.smallButton
+                  : darkMode.smallButton
+              }
+            >
+              <Text
+                style={
+                  colorScheme == "light"
+                    ? styles.smallButtonText
+                    : darkMode.smallButtonText
+                }
+              >
+                Positive Body Language
+              </Text>
+            </Pressable>
 
-          <Text
-            style={
-              colorScheme == "light"
-                ? styles.smallHeading
-                : darkMode.smallHeading
-            }
-          >
-            Negative Body Language
-          </Text>
-          <Text>
-            This type of body language conveys uncomfortability,disinterest,discomfort
-          </Text>
-          <Text
-            style={
-              colorScheme == "light"
-                ? styles.smallHeading
-                : darkMode.smallHeading
-            }
-          >
-            Examples Include
-          </Text>
-          <View style={styles.bulletPointView}>
-            <BulletPoint>Interrupting</BulletPoint>
+            <Pressable
+              onPress={onPressNegative}
+              style={
+                colorScheme == "light"
+                  ? styles.smallButton
+                  : darkMode.smallButton
+              }
+            >
+              <Text
+                style={
+                  colorScheme == "light"
+                    ? styles.smallButtonText
+                    : darkMode.smallButtonText
+                }
+              >
+                Negative Body Language
+              </Text>
+            </Pressable>
           </View>
-          <View style={styles.bulletPointView}>
-            <BulletPoint>Frowning</BulletPoint>
+
+          {/* //Modal Starting */}
+          <View>
+            <Modal animationType="fade" transparent visible={modalVisible}>
+              <View style={styles.centeredView}>
+                <View style={styles.modalView}>
+                  <View
+                    style={
+                      colorScheme == "light"
+                        ? styles.closeButton
+                        : darkMode.closeButton
+                    }
+                  >
+                    <Pressable onPress={onPressCloseModal}>
+                      <AntDesign
+                        name="closesquare"
+                        size={50}
+                        style={
+                          colorScheme == "light"
+                            ? styles.closeIcon
+                            : darkMode.closeIcon
+                        }
+                      />
+                    </Pressable>
+                  </View>
+                  <View style={styles.modalTextView}>
+                    <View
+                      style={
+                        colorScheme == "light"
+                          ? styles.modalTextContainer
+                          : darkMode.modalTextContainer
+                      }
+                    >
+                      <Text
+                        style={
+                          colorScheme == "light"
+                            ? styles.headingModalText
+                            : darkMode.headingModalText
+                        }
+                      >
+                        {displayHeading}
+                      </Text>
+                      <Text
+                        style={
+                          colorScheme == "light"
+                            ? styles.bodyText
+                            : darkMode.bodyText
+                        }
+                      >
+                        {displayText}
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </Modal>
           </View>
-          <View style={styles.bulletPointView}>
-            <BulletPoint>Sighing</BulletPoint>
-          </View>
-          <View style={styles.bulletPointView}>
-            <BulletPoint>Closed Posture</BulletPoint>
-          </View>
+          {/* //Modal Endiing */}
+
+          {/* <View>
+            <Text
+              style={
+                colorScheme == "light"
+                  ? styles.smallHeading
+                  : darkMode.smallHeading
+              }
+            >
+              Positive Body Language
+            </Text>
+            <Text>
+              This type of body language conveys openness, approchability and
+              confidence
+            </Text>
+            <Text
+              style={
+                colorScheme == "light"
+                  ? styles.smallHeading
+                  : darkMode.smallHeading
+              }
+            >
+              Examples Include
+            </Text>
+            <View style={styles.bulletPointView}>
+              <BulletPoint>Smiling</BulletPoint>
+            </View>
+            <View style={styles.bulletPointView}>
+              <BulletPoint>Open Posture</BulletPoint>
+            </View>
+            <View style={styles.bulletPointView}>
+              <BulletPoint>Relaxed Posture</BulletPoint>
+            </View>
+            <View style={styles.bulletPointView}>
+              <BulletPoint>Nodding</BulletPoint>
+            </View>
+
+            <Text
+              style={
+                colorScheme == "light"
+                  ? styles.smallHeading
+                  : darkMode.smallHeading
+              }
+            >
+              Negative Body Language
+            </Text>
+            <Text>
+              This type of body language conveys
+              uncomfortability,disinterest,discomfort
+            </Text>
+            <Text
+              style={
+                colorScheme == "light"
+                  ? styles.smallHeading
+                  : darkMode.smallHeading
+              }
+            >
+              Examples Include
+            </Text>
+            <View style={styles.bulletPointView}>
+              <BulletPoint>Interrupting</BulletPoint>
+            </View>
+            <View style={styles.bulletPointView}>
+              <BulletPoint>Frowning</BulletPoint>
+            </View>
+            <View style={styles.bulletPointView}>
+              <BulletPoint>Sighing</BulletPoint>
+            </View>
+            <View style={styles.bulletPointView}>
+              <BulletPoint>Closed Posture</BulletPoint>
+            </View>
+          </View> */}
         </View>
       </View>
-    </View>
     </ScrollView>
-    
   );
 };
 
@@ -192,8 +345,8 @@ const styles = StyleSheet.create({
     color: "black",
   },
   bodyText: {
-    //marginBottom: 100,
     color: "black",
+    flexWrap:"wrap"
   },
   bodyHeadingText: {
     fontWeight: "bold",
@@ -216,6 +369,8 @@ const styles = StyleSheet.create({
   smallButtonText: {
     fontSize: 15,
     color: "white",
+    flexWrap: "wrap",
+    paddingHorizontal: 10,
   },
   smallButton: {
     backgroundColor: "black",
@@ -223,7 +378,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     // marginVertical:60,
     padding: 5,
-    width: "30%",
+    width: "40%",
     height: 100,
     alignItems: "center",
     alignSelf: "center",
@@ -245,9 +400,7 @@ const styles = StyleSheet.create({
   modalView: {
     width: "100%",
     height: "100%",
-    // margin: 20,
     backgroundColor: "rgba(149,149,155, 0.9)",
-    // backgroundColor: '#CCCCC9',
     borderRadius: 20,
   },
   modalTextView: {
@@ -297,6 +450,7 @@ const styles = StyleSheet.create({
   },
   mainInfoText: {
     color: "black",
+    paddingHorizontal:10
   },
   closeIcon: {
     color: "black",

@@ -37,7 +37,7 @@ const Drawer = createDrawerNavigator();
 
 const colorScheme = Appearance.getColorScheme();
 
-const AutisticSupportDrawerNavigator = () => {
+const AutisticSupportDrawerNavigator = ({navigation}) => {
   const dimensions = useWindowDimensions();
   return (
     <Drawer.Navigator
@@ -55,9 +55,9 @@ const AutisticSupportDrawerNavigator = () => {
           component={NonAutistcHomePage}
           options={{
             title: "Ways to Support",
-            headerRight: () => (
-              <Button title="Back" onPress={() => navigation.navigation(" Autistc Support")} />
-            ),
+            // headerRight: () => (
+            //   <Button title="Back" onPress={() => navigation.navigate("Welcome")} />
+            // ),
             drawerActiveBackgroundColor:
               colorScheme == "light" ? "blue" : "grey",
             
@@ -119,7 +119,7 @@ export default function App() {
             component={AutisticSupportDrawerNavigator}
             //options={{ headerShown: false }}
             options={{ 
-              title: " Autistc Support",
+              title: "Autistc Support",
              
 
           }}

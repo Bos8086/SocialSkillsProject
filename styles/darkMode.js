@@ -25,7 +25,7 @@ const darkMode = StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    color: "black",
+    color: "white",
   },
   centerView: {
     width: "100%",
@@ -40,7 +40,7 @@ const darkMode = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 50,
-    marginBottom:50
+    marginBottom: 50,
   },
   bulletPoint: {
     flexDirection: "row",
@@ -70,7 +70,7 @@ const darkMode = StyleSheet.create({
   bulletText: {
     fontSize: 17,
     marginTop: -7,
-    color:"white"
+    color: "white",
   },
   bulletPointView: {
     flexDirection: "row",
@@ -89,14 +89,14 @@ const darkMode = StyleSheet.create({
   },
   mainText: {
     fontSize: 20,
-    color:"white"
+    color: "white",
   },
   body: {
     marginLeft: 11,
     marginRight: 10,
   },
   bodyText: {
-    color:"white"
+    color: "white",
   },
   smallButtonText: {
     fontSize: 15,
@@ -120,71 +120,131 @@ const darkMode = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     marginTop: 10,
-    color:"white"
+    color: "white",
   },
-  mainInfoText:{
-    color:"white"
+  mainInfoText: {
+    color: "white",
+    paddingHorizontal: 10,
   },
   modalTextContainer: {
-    width:"100%",
+    width: "100%",
     backgroundColor: "black",
     borderRadius: 30,
-    opacity:1,
-    padding:10,
-    shadowColor: '#000' ,
-    shadowOffset: { width: 0, height: 3  },
+    opacity: 1,
+    padding: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.7,
     shadowRadius: 2,
     elevation: 2,
-    height:"100%",
-    width:"100%",
+    height: "100%",
+    width: "100%",
     //justifyContent:"center",
   },
-  closeIcon : {
-    color:"white"
+  closeIcon: {
+    color: "white",
   },
-  closeButton:{
-    position:"absolute",
-    right:10,
-    top:100,
+  closeButton: {
+    position: "absolute",
+    right: 10,
+    top: 100,
     backgroundColor: "black",
-    width:"20%",
-    height:"10%",
-    borderRadius:30,
-    justifyContent:"center",
-    alignContent:"center",
-    alignItems:"center"
+    width: "20%",
+    height: "10%",
+    borderRadius: 30,
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
   },
-  headingModalText:{
-    fontWeight:"bold",
-    textDecorationLine:"underline",
-    textDecorationStyle:"solid",
-    alignSelf:"center",
-    marginBottom:5,
-    marginTop:5,
-    color:"white"
+  headingModalText: {
+    fontWeight: "bold",
+    textDecorationLine: "underline",
+    textDecorationStyle: "solid",
+    alignSelf: "center",
+    marginBottom: 5,
+    marginTop: 5,
+    color: "white",
   },
-  iconStyle1:{
+  iconStyle1: {
     marginLeft: 30,
-    color:"white"
+    color: "white",
   },
-  iconStyle2:{
-    marginLeft: 80, 
-    color:"white"
+  iconStyle2: {
+    marginLeft: 80,
+    color: "white",
   },
-  iconStyle3:{
-    marginLeft:60,
-    color:"white"
+  iconStyle3: {
+    marginLeft: 60,
+    color: "white",
   },
-  iconStyle4:{
-    color:"white"
+  iconStyle4: {
+    color: "white",
   },
-  normalText:{
-    color:"white"
+  normalText: {
+    color: "white",
   },
-  settingsText:{
-    color:"white"
+  settingsText: {
+    color: "white",
+  },
+  quizQuestions: {
+    fontWeight: "bold",
+    flexWrap: "wrap",
+    paddingRight: 25,
+    color: "white",
+  },
+  quizQuestionsNo: {
+    paddingHorizontal: 10,
+    color: "white",
+  },
+  progressBar: {
+    color: "red",
+  },
+  timerText: {
+    color: "white",
+    fontSize:20,
+    alignSelf:"center"
+  },
+  timerIcon: {
+    color: "white",
+    paddingRight: 10,
+  },
+  instructionsHeading: {
+    fontWeight: "900",
+    padding: 5,
+    color: "white",
+  },
+  instructionsText: {
+    color: "white",
+  },
+  quizText:{
+    color:"white",
+    marginVertical:10
+  },
+  dividerQuiz: {
+    borderBottomColor: "white",
+    borderBottomWidth: 1,
+    marginVertical: 10,
+  },
+  quizTextpoi: {
+    color: "white",
+  },
+  quizResultsHeading: {
+    color: "white",
+    fontWeight:"bold",
+    paddingHorizontal:10
+  },
+  quizResultsCorectAnswer:{
+    fontWeight:"bold",
+    color: "white",
+    paddingRight:10,
+    marginVertical: 5
+  },
+  quizResultsExplanation:{
+    fontWeight:"500",
+    color: "white",
+    paddingRight:10
   }
+ 
 });
 
 export default darkMode;

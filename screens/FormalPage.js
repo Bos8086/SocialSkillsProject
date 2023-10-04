@@ -40,7 +40,7 @@ const FormalPage = () => {
     setModalVisible(!modalVisible);
     setDisplayHeading("Workplace");
     setDisplayText(
-      " Formal conversations are common in professional settings, such as offices, boardrooms, and meetings. Interactions with colleagues,superiors, clients, or business partners often require a formal tone to maintain professionalism and convey respect."
+      " Formal conversations often occur in professional settings. Examples of these places can include offices, meetings and boardrooms. Interactions with coworkers, supervisors, clients and business partners are categorised under these. During these meetings, it is important to maintain a professional approach and maintain respect."
     );
   };
 
@@ -48,21 +48,21 @@ const FormalPage = () => {
     setModalVisible(!modalVisible);
     setDisplayHeading("Academic Setting");
     setDisplayText(
-      "Formal conversations are prevalent in educational institutions,including classrooms, seminars, conferences, and academic presentations. Students, professors, researchers, and scholars engage in formal discussions to share knowledge, present research, or participate in scholarly debates."
+      "Examples of Academic settings are classrooms, seminars, conferences and academic professions. People in these settings are often scholars or teachers. These include students, professors and researchers. They engage in discussions to share information and knowledge."
     );
   };
   const onPressInterviews = () => {
     setModalVisible(!modalVisible);
     setDisplayHeading("Job interviews:");
     setDisplayText(
-      "Interviews are formal conversations where candidates are evaluatedfor employment opportunities. Both the interviewer and interviewee are expected to maintain a formal demeanor and discuss relevant qualifications, experiences, and career aspirations."
+      "In Job settings, interviews are conducted to assess if a candidate is qualified for an employment opportunity. Both the Interviewer and Interviewee are expected to maintain professionalism throughout the interview selection process."
     );
   };
   const onPressLegal = () => {
     setModalVisible(!modalVisible);
     setDisplayHeading("Legal proceedings:");
     setDisplayText(
-      " In courtrooms, legal consultations, or any legal context, formal conversations are essential. Lawyers, judges, and other legal professionals adhere to specific protocols and use formal language to ensure clarity, precision, and respect for the legal process."
+      "In courtrooms, legal consultations, or any legal setting, It is important that a level of professionalism be adhered to during court proceedings in order for information to be passed with clarity, precision, and respect for the legal process."
     );
   };
   const onPressDiplomatic = () => {
@@ -76,14 +76,14 @@ const FormalPage = () => {
     setModalVisible(!modalVisible);
     setDisplayHeading("Customer service interactions:");
     setDisplayText(
-      " While customer service conversations can vary in formality depending on the industry, certain contexts, such as formal complaints, corporate settings, or high-level customer interactions, may require a more formal approach to address concerns or resolve issues."
+      "While customer service conversations, in general, can vary in formality depending on the industry, certain contexts, such as formal complaints, corporate settings, or high-level customer interactions, may require a more formal approach to address concerns or resolve issues"
     );
   };
   const onPressCeremonies = () => {
     setModalVisible(!modalVisible);
     setDisplayHeading("Official ceremonies and events:");
     setDisplayText(
-      "Events like award ceremonies, official dinners, or government functions often demand formal conversations. Participants are  expected to engage in polite and respectful exchanges, following established etiquette and protocol."
+      "Events such as award ceremonies, official dinners, or government functions require formal conversations at some point during such events. Participants are  expected to engage in polite and respectful exchanges, following established etiquette and protocol."
     );
   };
 
@@ -130,12 +130,13 @@ const FormalPage = () => {
                   : darkMode.mainInfoText
               }
             >
-              Formal conversations refer to interactions or discussions that
-              adhere to established social norms, conventions, and etiquette.
-              These conversations typically follow a more structured and
-              professional tone, focusing on serious topics, such as business
-              matters, academic discussions, official communication, or any
-              situation that requires a respectful and professional approach.
+              Formal conversations are those that adhere to traditional and
+              conventional ideas with respect to communication. These
+              conversations typically follow a more structured and professional
+              tone often with a focus on serious topics which often include
+              business matters, academic discussions, official communication, or
+              any circumstance that requires a respectful and professional
+              approach.
             </Text>
           )}
 
@@ -466,7 +467,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 300,
     left: 80,
-    height: "30%",
+    height: "40%",
     width: "70%",
     borderRadius: 15,
     elevation: 40,

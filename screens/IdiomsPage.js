@@ -11,8 +11,10 @@ const IdiomsPage = () => {
   };
 
   return (
-    <View>
-      <Text> Click here to learn more about Idioms </Text>
+    <View  style={colorScheme == "light" ? styles.mainView : darkMode.mainView}>
+      <Text  style={
+            colorScheme == "light" ? styles.headingText : darkMode.headingText
+          }> Click here to learn more about Idioms </Text>
       <Pressable onPress={onPressIdioms} style={colorScheme == 'light'?styles.mainButton:darkMode.mainButton}>
           <Text style={colorScheme == 'light'?styles.buttonText:darkMode.buttonText}>Idioms</Text>
       </Pressable>

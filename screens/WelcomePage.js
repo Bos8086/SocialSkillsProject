@@ -1,10 +1,6 @@
 import { View, Text, TouchableWithoutFeedback, StyleSheet,Image,Appearance, } from "react-native";
-import React , { useEffect,useContext ,useState} from "react";
-import * as Speech from 'expo-speech';
+import React , { useEffect,useState} from "react";
 import darkMode from '../styles/darkMode';
-import Settings from "./Settings";
-import MyContext from '../utils/context'; 
-import {secureGet, secureSave,getLocal} from "../utils/storage"
 import { getData } from "../utils/helper";
 
 
@@ -66,28 +62,28 @@ const asyncValue = async () => {
   
   
 
-  const speakTextContinue = () => {
-    console.log(textToSpeechValue)
-    if (textToSpeechValue == true) {
-      const thingToSay = 'continue';
-      Speech.speak(thingToSay);  
-    }
-  };
+  // const speakTextContinue = () => {
+  //   console.log(textToSpeechValue)
+  //   if (textToSpeechValue == true) {
+  //     const thingToSay = 'continue';
+  //     Speech.speak(thingToSay);  
+  //   }
+  // };
 
-  const speakTextSettings = () => {
-    const thingToSay = 'Settings';
-    Speech.speak(thingToSay);  
-};
+//   const speakTextSettings = () => {
+//     const thingToSay = 'Settings';
+//     Speech.speak(thingToSay);  
+// };
 
 
 
   const buttonHandlerContinue = () => {
-    speakTextContinue()
+    //speakTextContinue()
     navigation.navigate("IntroPage");
   };
 
   const buttonHandlerSettings = () => {
-    speakTextSettings()
+    //speakTextSettings()
     navigation.navigate("Settings");
   };
 

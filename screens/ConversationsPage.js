@@ -10,6 +10,7 @@ import React from "react";
 import darkMode from "../styles/darkMode";
 import { ScrollView } from "react-native-gesture-handler";
 
+
 const ConversationsPage = ({ navigation }) => {
   const colorScheme = Appearance.getColorScheme();
 
