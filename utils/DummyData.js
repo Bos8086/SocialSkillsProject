@@ -158,7 +158,7 @@ export const inFormalQuestionBank = [
     key: 10,
 
     question:
-      "How do you gracefully exit an informal conversation when it is time to conclude?",
+      "How do you respectfully end an informal conversation when it is time to conclude?",
 
     options: [
       "Abruptly stop talking and walk away.",

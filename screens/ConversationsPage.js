@@ -74,7 +74,7 @@ const ConversationsPage = ({ navigation }) => {
               colorScheme == "light" ? styles.buttonText : darkMode.buttonText
             }
           >
-            InFormal
+            Informal
           </Text>
         </Pressable>
 

@@ -56,7 +56,7 @@ const FormalHomePage = ({ navigation }) => {
               colorScheme == "light" ? styles.buttonText : darkMode.buttonText
             }
           >
-            Quizes
+            Quiz
           </Text>
         </Pressable>
       </View>

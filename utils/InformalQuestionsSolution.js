@@ -32,7 +32,7 @@ const QuestionDetail = ({ questionData }) => {
 
 const InformalQuestionsSolution = () => {
   return (
-    <ScrollView style={{ marginBottom: 100,marginHorizontal:20 }}>
+    <ScrollView style={{ marginBottom: 250,marginRight:30,marginLeft:20 }}>
       {inFormalQuestionBank.map((questionData) => (
         <QuestionDetail key={questionData.key} questionData={questionData} />
       ))}

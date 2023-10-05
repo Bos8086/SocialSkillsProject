@@ -57,7 +57,7 @@ const InformalHomePage = ({ navigation }) => {
               colorScheme == "light" ? styles.buttonText : darkMode.buttonText
             }
           >
-            Quizes
+            Quiz
           </Text>
         </Pressable>
       </View>

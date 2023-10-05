@@ -494,8 +494,10 @@ const InformalQuizPage = ({ navigation }) => {
             </Text>
             {calculateScore() === inFormalQuestionBank.length && (
               <View style={{ flexDirection: "row" }}>
-                <Text>Congratulations!</Text>
-                <Ionicons name="trophy" size={30} color={"black"} />
+                <Text style={
+              colorScheme == "light" ? styles.quizText : darkMode.quizText
+            }>Congratulations!</Text>
+                <Ionicons name="trophy" size={30} color={"yellow"} />
               </View>
             )}
             {calculateScore() != inFormalQuestionBank.length && (

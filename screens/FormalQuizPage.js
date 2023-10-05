@@ -540,7 +540,7 @@ const FormalQuizPage = ({ navigation }) => {
                 >
                   Congratulations!
                 </Text>
-                <Ionicons name="trophy" size={30} color={"black"} />
+                <Ionicons name="trophy" size={30} color={"yellow"} />
               </View>
             )}
             {calculateScore() != formalQuestionBank.length && (
