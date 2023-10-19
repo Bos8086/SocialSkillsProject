@@ -272,7 +272,7 @@ export const formalQuestionBank = [
       "you can be rude to friends but polite to colleagues",
       "you have to be unkind to both friends and colleagues",
     ],
-    correctAnswer: "Executive summary, body, conclusions, recommendations",
+    correctAnswer: "Formal conversations are often professional while conversation with friends are friendly",
     explanation: "In formal conversations, you typically maintain a professional tone and adhere to certain etiquette, whereas with friends, the tone is more casual and relaxed.",
   },
 
